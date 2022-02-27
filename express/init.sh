@@ -3,7 +3,7 @@ npm init -y
 npm install express
 npm install express-handlebars
 cp ../swissknife/express/app.js . 
-cp ../swissknife/express/views/ .
+cp -r ../swissknife/express/views/ .
 
 echo "package.json 加入常用指令"
 echo "main app.js \n   
