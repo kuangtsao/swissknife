@@ -5,9 +5,4 @@ npm install express-handlebars
 cp ../swissknife/express/app.js . 
 cp -r ../swissknife/express/views/ .
 
-echo "package.json 加入常用指令"
-echo "main app.js \n   
-    scripts: { \n
-    start: node app.js, \n
-    dev: nodemon app.js 
-    "
+jq '.main = "app.js" | del(.scripts.test) | .scripts.start = "node app.js" | .scripts.dev = "nodemon app.js"' package.json | sponge package.json
